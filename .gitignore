@@ -1,0 +1,22 @@
+# Dépôts de compilation (Build outputs)
+Debug/
+Release/
+
+# Fichiers binaires et objets
+*.elf
+*.bin
+*.hex
+*.o
+*.d
+*.su
+*.map
+
+# Fichiers temporaires et sauvegardes IDE
+*.bak
+*.log
+*.tmp
+.DS_Store
+
+# Fichiers utilisateur spécifiques à STM32CubeIDE (optionnel)
+*.launch
+
