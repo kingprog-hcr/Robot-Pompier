@@ -36,7 +36,6 @@ void App_FSM(void)
 	{
 		//-- Init ----------------------------------
 		case ST_INIT :
-			ILI9341_Puts(25,200, "Initialization", &Font_7x10, ILI9341_COLOR_BROWN, ILI9341_COLOR_WHITE);
 
 			e_current_state = ST_WAIT;
 			break;
@@ -48,7 +47,6 @@ void App_FSM(void)
 			{
 				u32_timer_ms = 0;
 
-				ILI9341_Puts(25,200, "Wait time is over !", &Font_7x10, ILI9341_COLOR_BROWN, ILI9341_COLOR_WHITE);
 
 				e_current_state = ST_BLINK_LED;
 			}
@@ -72,7 +70,7 @@ void App_FSM(void)
 		//-- Default state : normally never reached ---------
 		default  :
 
-			ILI9341_Puts(25,200, "ERROR : default state reached !", &Font_7x10, ILI9341_COLOR_BROWN, ILI9341_COLOR_WHITE);
+
 			break;
 		}
 }

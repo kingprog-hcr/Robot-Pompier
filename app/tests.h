@@ -7,6 +7,6 @@
 #include <stdio.h>
 
 //-- Prototypes ----------------------------------------------
-
+void Test_Init(void);
 void Test_FlameSensor(void);
 #endif /* TESTS_H_ */

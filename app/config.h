@@ -41,7 +41,7 @@
 #define USE_DAC				0
 
 /*------------------Afficheurs------------------*/
-#define USE_ILI9341			1 // �cran TFT
+#define USE_ILI9341			0 // �cran TFT
 #if USE_ILI9341
 	#define USE_XPT2046			1
 	#define USE_FONT7x10		1
@@ -62,6 +62,11 @@
 
 #define PUMP_GPIO_PORT GPIOB
 #define PUMP_GPIO_PIN GPIO_PIN_5 //(PB5)
+
+// buzzer :
+
+#define BUZZER_PORT GPIOA
+#define BUZZER_PIN GPIO_PIN_8
 
 #define USE_MPU6050			0 // Acc�l�rom�tre, Gyroscope
 #define USE_APDS9960		0 // Capteur de mouvements, pr�sence, couleurs

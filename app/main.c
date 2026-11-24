@@ -42,10 +42,10 @@ int main(void)
 	// Configure output to control nucleo's green LED
 	BSP_GPIO_pin_config(GPIOB, GPIO_PIN_8, GPIO_MODE_OUTPUT_PP, GPIO_NOPULL, GPIO_SPEED_FAST, GPIO_NO_AF);
 
-	// Initialize screen
-	ILI9341_Init();
-	ILI9341_Rotate(ILI9341_Orientation_Landscape_2);
-	FLameSensor_Init();
+
+	Test_Init();
+
+	BSP_GPIO_pin_config(BUZZER_PORT, BUZZER_PIN, GPIO_MODE_OUTPUT_PP, GPIO_NOPULL, GPIO_SPEED_FREQ_HIGH, GPIO_NO_AF);
 
 	//-- Application ------------------------------------------------
 	while (1)
@@ -53,6 +53,8 @@ int main(void)
 		//DEMO_adc_statemachine();
 		Test_FlameSensor();
 		HAL_Delay(500);
+
+
 
 		/*
 		if(u8_FlagSysTick == 1u)
