@@ -47,7 +47,7 @@ void Test_FlameSensor(void){
 	HAL_Delay(500);
 }
 
-
+/*
 // Test du capteur ultrason
 
 
@@ -61,10 +61,10 @@ void Test_Ultrason_run(void)
     printf("     LANCEMENT DU TEST UNITAIRE ULTRASON    \n");
 
 
-    /* * Ajout du capteur ultrason avec les broches :
-         * - Trigger : PB3 (GPIOB, GPIO_PIN_3)
-         * - Echo    : PA7 (GPIOA, GPIO_PIN_7)
-         */
+    // * Ajout du capteur ultrason avec les broches :
+      //   * - Trigger : PB3 (GPIOB, GPIO_PIN_3)
+        // * - Echo    : PA7 (GPIOA, GPIO_PIN_7)
+
         if (BSP_HCSR04_add(&id_ultrason, GPIOB, GPIO_PIN_3, GPIOA, GPIO_PIN_7) == HAL_OK) {
             printf("[SUCCESS] Capteur ultrason ajoute (Trig:PB3, Echo:PA7) - ID : %d\n", id_ultrason);
         } else {
@@ -75,7 +75,7 @@ void Test_Ultrason_run(void)
 
     t_last_measure = HAL_GetTick();
 
-    /* Boucle de test */
+    // Boucle de test
     while (1)
     {
 
@@ -111,6 +111,7 @@ void Test_Ultrason_run(void)
     }
 }
 
+*/
 
 void Test_PUMP(void){
 	uint8_t command = 0;
