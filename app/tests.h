@@ -9,4 +9,6 @@
 //-- Prototypes ----------------------------------------------
 void Test_Init(void);
 void Test_FlameSensor(void);
+void Test_PUMP(void);
+void Test_Ultrason_run(void);
 #endif /* TESTS_H_ */

@@ -45,14 +45,13 @@ int main(void)
 
 	Test_Init();
 
-	BSP_GPIO_pin_config(BUZZER_PORT, BUZZER_PIN, GPIO_MODE_OUTPUT_PP, GPIO_NOPULL, GPIO_SPEED_FREQ_HIGH, GPIO_NO_AF);
+
 
 	//-- Application ------------------------------------------------
 	while (1)
 	{
 		//DEMO_adc_statemachine();
-		Test_FlameSensor();
-		HAL_Delay(500);
+		Test_PUMP();
 
 
 
