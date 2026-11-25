@@ -17,9 +17,11 @@
 #include "stm32g4_utils.h"
 #include "stm32g4_gpio.h"
 #include <stdio.h>
+#include "motor.h"
 
 void Test_Init(void){
 	FLameSensor_Init();
+	Motors_Init();
 	// Pin du buzzer
 	BSP_GPIO_pin_config(BUZZER_PORT, BUZZER_PIN, GPIO_MODE_OUTPUT_PP, GPIO_NOPULL, GPIO_SPEED_FREQ_HIGH, GPIO_NO_AF);
 
@@ -47,7 +49,7 @@ void Test_FlameSensor(void){
 	HAL_Delay(500);
 }
 
-/*
+
 // Test du capteur ultrason
 
 
@@ -61,10 +63,10 @@ void Test_Ultrason_run(void)
     printf("     LANCEMENT DU TEST UNITAIRE ULTRASON    \n");
 
 
-    // * Ajout du capteur ultrason avec les broches :
-      //   * - Trigger : PB3 (GPIOB, GPIO_PIN_3)
-        // * - Echo    : PA7 (GPIOA, GPIO_PIN_7)
-
+    /* * Ajout du capteur ultrason avec les broches :
+         * - Trigger : PB3 (GPIOB, GPIO_PIN_3)
+         * - Echo    : PA7 (GPIOA, GPIO_PIN_7)
+         */
         if (BSP_HCSR04_add(&id_ultrason, GPIOB, GPIO_PIN_3, GPIOA, GPIO_PIN_7) == HAL_OK) {
             printf("[SUCCESS] Capteur ultrason ajoute (Trig:PB3, Echo:PA7) - ID : %d\n", id_ultrason);
         } else {
@@ -75,7 +77,7 @@ void Test_Ultrason_run(void)
 
     t_last_measure = HAL_GetTick();
 
-    // Boucle de test
+    /* Boucle de test */
     while (1)
     {
 
@@ -111,7 +113,6 @@ void Test_Ultrason_run(void)
     }
 }
 
-*/
 
 void Test_PUMP(void){
 	uint8_t command = 0;
@@ -136,6 +137,36 @@ void Test_PUMP(void){
 				break;
 					}
 	}
+
+}
+
+void Test_motors(void){
+
+	uint8_t command = 0;
+
+		if(BSP_UART_data_ready(UART2_ID)){ // liaison avec le PC
+			command = BSP_UART_getc(UART2_ID);
+			switch(command){
+
+				case 'A':
+								// Avancer
+					Motors_SetSpeed(0, 500);
+					Motors_SetSpeed(1, 500);
+					printf("Avancer \n");
+					break;
+
+				case 'R':
+						// Reculer
+					Motors_SetSpeed(0, -500);
+					Motors_SetSpeed(1, -500);
+					printf("Reculer \n");
+					break;
+
+				default :
+					break;
+						}
+		}
+
 
 }
 

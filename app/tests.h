@@ -11,4 +11,5 @@ void Test_Init(void);
 void Test_FlameSensor(void);
 void Test_PUMP(void);
 void Test_Ultrason_run(void);
+void Test_motors(void);
 #endif /* TESTS_H_ */

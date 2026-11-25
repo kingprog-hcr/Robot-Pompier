@@ -20,6 +20,7 @@
 #include "App/app_fsm.h"
 #include <stdio.h>
 #include "tests.h"
+#include "motor.h"
 /**
   * @brief  Point d'entrée de votre application
   */
@@ -51,7 +52,9 @@ int main(void)
 	while (1)
 	{
 		//DEMO_adc_statemachine();
-		Test_PUMP();
+		Motors_SetSpeed(0, 700);
+		Motors_SetSpeed(1, 700);
+		//Test_motors();
 
 
 
